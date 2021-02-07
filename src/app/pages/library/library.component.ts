@@ -65,7 +65,12 @@ export class LibraryComponent implements OnInit {
   }
 
   deleteBook(book: Book, index: number) {
-    this.modal.confirm(`Are you sure you would like to delete '${book.title}'? This action can not be undone.`).subscribe(res => {
+    this.modal.openModal<ConfirmConfig>({
+      component: ConfirmComponent,
+      properties: {
+        confirm: `Are you sure you would like to delete '${book.title}'? This action can not be undone.`
+      },
+    }).subscribe(res => {
       if (res) {
         this.list.splice(index, 1);
         this.list = [...this.list];
@@ -74,7 +79,14 @@ export class LibraryComponent implements OnInit {
   }
 
   openBookForm(book?: Book, index?: number) {
-    this.modal.openFormModal<Book>(`${!book ? 'Create' : 'Edit'} Book`, this.metaData, book)
+    this.modal.openModal<ModalFormConfig<Book>>({
+      component: ModalFormComponent,
+      properties: {
+        formMetaData: this.metaData,
+        item: book
+      },
+      title: `${!book ? 'Create' : 'Edit'} Book`
+    })
       .subscribe(values => {
         if (book) {
           this.list.splice(index, 1, values);
