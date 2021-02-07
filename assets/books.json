@@ -3,12 +3,12 @@
         "author": "J.R.R Tolkien",
         "date": "2021-02-26T02:24",
         "title": "Lord of the Rings!",
-        "imageUrl": "/book-library/assets/lord-of-the-rings.jpg"
+        "imageUrl": "assets/lord-of-the-rings.jpg"
     },
     {
         "author": "J.K Rowling",
         "date": "2021-02-26T02:24",
         "title": "HARRY POTTER",
-        "imageUrl": "/book-library/assets/harry-potter.jpg"
+        "imageUrl": "assets/harry-potter.jpg"
     }
 ]
