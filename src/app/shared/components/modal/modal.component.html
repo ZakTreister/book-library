@@ -1,0 +1,13 @@
+<div class="modal fade" [ngClass]="{'show d-block':showModal}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" *ngIf="title">
+                <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+                <app-button styleClass="btn-close" (onClick)="closeModal()"></app-button>
+            </div>
+            <div class="modal-body">
+                <ng-container #modalBody></ng-container>
+            </div>
+        </div>
+    </div>
+</div>

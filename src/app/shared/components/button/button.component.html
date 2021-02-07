@@ -1,0 +1,2 @@
+<button *ngIf="type=='submit'" [class]="styleClass" type="submit" [disabled]="disabled">{{label}}</button>
+<button *ngIf="!type || type=='button'" [class]="styleClass" (click)="clickEvent()" [type]="type">{{label}}</button>

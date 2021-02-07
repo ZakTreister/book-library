@@ -1,0 +1,4 @@
+<app-dynamic-field [config]="config" [group]="group">
+    <input class="form-control" [ngClass]="{'is-invalid':!!control?.touched && !control.valid}" type="text"
+        [id]="config.field" [formControl]="control" />
+</app-dynamic-field>

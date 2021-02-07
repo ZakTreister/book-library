@@ -1,0 +1,7 @@
+<div class="mb-3">
+    <label [for]="config.field" class="form-label">{{config.label}}</label>
+    <ng-content></ng-content>
+    <ng-container *ngFor="let err of errors">
+        <div class="invalid-feedback" *ngIf="this.control?.errors && this.control.errors[err.key]">{{err.message}}</div>
+    </ng-container>
+</div>

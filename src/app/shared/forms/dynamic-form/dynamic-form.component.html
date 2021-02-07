@@ -1,0 +1,21 @@
+<form (submit)="submit()" *ngIf="groupInstance">
+    <div *ngFor="let config of metaData">
+        <ng-container [ngSwitch]="config.dataType">
+            <app-date-input-field *ngSwitchCase="'date'" [group]="groupInstance" [config]="config">
+            </app-date-input-field>
+            <app-text-input-field *ngSwitchCase="'text'" [group]="groupInstance" [config]="config">
+            </app-text-input-field>
+        </ng-container>
+    </div>
+    <div class="d-flex justify-content-end">
+        <ng-container
+            *ngTemplateOutlet="!footerButtons ? defaultSubmit : footerButtons; context: { $implicit : groupInstance }"
+            type="submit" styleClass="btn btn-success" label="save">
+        </ng-container>
+    </div>
+</form>
+
+<ng-template #defaultSubmit>
+    <app-button type="submit" styleClass="btn btn-success" label="save">
+    </app-button>
+</ng-template>

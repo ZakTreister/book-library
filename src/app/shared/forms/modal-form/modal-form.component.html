@@ -1,0 +1,8 @@
+<app-dynamic-form [item]="config.item" [metaData]="config.formMetaData" (onSubmit)="closeModal($event)">
+    <ng-template #footerButtons let-form>
+        <app-button styleClass="btn btn-success" type="submit" label="Save" [disabled]="!form || !form.valid">
+        </app-button>
+        <app-button styleClass="btn btn-outline-secondary ms-2" label="Cancel" (onClick)="closeModal()">
+        </app-button>
+    </ng-template>
+</app-dynamic-form>

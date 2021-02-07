@@ -1,0 +1,11 @@
+<div class="card mb-4">
+    <div class="card-header"
+        style="background-image: url({{book.imageUrl}});"></div>
+    <div class="card-body">
+        <h5 class="card-title">{{book.title | title}}</h5>
+        <p class="card-text">{{book.author}}</p>
+        <p class="card-text">{{book.date | date:'d/M/YY'}}</p>
+        <app-button label="Edit" styleClass="btn btn-info" class="ms-auto" (onClick)="editBook()"></app-button>
+        <app-button label="Delete" styleClass="btn btn-danger" class="ms-2" (onClick)="deleteBook()"></app-button>
+    </div>
+</div>

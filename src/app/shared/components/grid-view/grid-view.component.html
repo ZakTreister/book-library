@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>{{gridTitle}}</h1>
+            <div class="d-flex" *ngIf="toolbar">
+                <app-button *ngFor="let btn of toolbar" [styleClass]="btn.styleClass" [label]="btn.label"
+                    (onClick)="btn.onClick()"></app-button>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let item of data; let index = index">
+            <ng-container [ngTemplateOutlet]="itemTemplate" [ngTemplateOutletContext]="{$implicit:item,index:index}">
+            </ng-container>
+        </div>
+    </div>
+</div>

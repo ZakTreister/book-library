@@ -1,0 +1,5 @@
+<app-grid-view gridTitle="The Library" [data]="list" [toolbar]="toolbar">
+    <ng-template let-book let-i="index">
+        <app-book-card [book]="book" (onDelete)="deleteBook(book,i)" (onEdit)="openBookForm(book,i)"></app-book-card>
+    </ng-template>
+</app-grid-view>

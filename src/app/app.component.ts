@@ -1,19 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { BookService } from './shared/services/book.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: '<router-outlet></router-outlet>'
 })
-export class AppComponent implements OnInit {
-  public list: any;
-  constructor(private bookService: BookService) {
-
-  }
-  ngOnInit(): void {
-    this.bookService.getBooks().subscribe(res=>{
-      this.list = res;
-    });
-  }
-}
+export class AppComponent { }
